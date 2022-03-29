@@ -1,0 +1,71 @@
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>   
+
+
+    <script>
+$(document).ready(function () {
+    var user = localStorage.getItem("user");  
+    if(user != null) 
+    {
+        $('#user').css('display','block'); 
+        if( user == "user123")
+        {        
+            $('#bdcolor').css('background-color','pink');    
+            $('#welcome').text('WELCOME USER1'); 
+        }
+        else if( user == "user456")
+        {
+            $('#bdcolor').css('background-color','lightblue'); 
+            $('#welcome').text('WELCOME USER2'); 
+        }
+    }
+    else 
+    {    
+        window.location.href = "login1.html";
+    }
+
+ });
+ function logout()
+    {
+        localStorage.removeItem('user');
+        localStorage.removeItem('pass');
+        window.location.href = "login1.html";
+    }
+</script>
+</head>
+<body id="bdcolor" >
+<div id="user" style="display:none">
+    
+    <h1><b id="welcome"> </b></h1>
+                <h2>
+                    <u>
+                        Credit and Debit in localStorage
+                    </u>
+                </h2>
+               Available Balance<div id="balance"></div>
+            <div id="input">
+                <b>Deposit</b>
+                <input  type="number" id="userDeposit" min="1" oninput="this.value = Math.abs(this.value)">   
+                <b>withdraw</b> 
+                <input type="number" id="userwithdraw" min="1" oninput="this.value = Math.abs(this.value)">
+            </div>
+                    <br><br>
+            <div class="container">
+                        
+                        <button id="btnDeposit">DEPOSIT</button>
+                        <button id="btnWithdraw">WITHDRAW</button>
+                        
+             </div><br>
+             <div>
+                <button onclick="logout();">LOGOUT</button>
+            </div>
+    
+
+       
+        </div>
+    
+        <script src="amt.js"></script>
+   
+</body>
+</html>

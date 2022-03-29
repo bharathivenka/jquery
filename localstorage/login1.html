@@ -1,0 +1,43 @@
+<html>
+<head> <title> LOGIN PAGE </title>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<style>
+    div{
+        text-align:center;
+    }
+</style>
+</head>
+<body bgcolor="#daff33">
+    <div style="text-align:center"; > <b>BANK OF INDIA </b></div><br>
+    <div><img src="bank.jpg"></div><br>
+<div>  USERNAME : <input type="text" id="user" required> </div><br>
+<div> PASSWORD : <input type="password" id="password" required></div><br>
+<div>  <input type="button" value="login" id="login"> </div>
+<script>
+$(document).ready(function () {
+                $("#login").click(function () {
+                    {
+                        var user1 = $("#user").val();
+                        var pass1 = $("#password").val();
+                        var user2 = $("#user").val();
+                        var pass2 = $("#password").val()
+                        if (user1 == "user123" && pass1 == "1234" ) {
+                            
+                            localStorage.setItem("user", user1);
+                            localStorage.setItem("pass", pass1); 
+                            window.location.href = "user.html";
+                        }
+                        else if (user2 == "user456" && pass2 == "5678") {
+                            localStorage.setItem("user", user2);
+                            localStorage.setItem("pass", pass2); 
+                            window.location.href = "user.html";
+                        } 
+                        else {
+                            alert("invalid username and PassWord");
+                        }
+                    }
+                })
+            })
+</script>
+</body>
+</html>

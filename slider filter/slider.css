@@ -1,0 +1,35 @@
+ .ui-slider{
+         width:800px;
+         padding-left:10px;
+         background: #ccddff;
+         }
+        .ui-slider .ui-slider-range{
+          background: #1a66ff;
+        }
+        .ui-slider .ui-slider-handle{
+          background: #0063cc;
+        }
+
+         #range{
+             font-weight: bold;
+         }
+         #range{
+           font-weight: bold;
+         }
+         table{
+           border-collapse: collapse;
+           margin:10px;
+         }
+         table,th,td{
+           border:1px solid black;
+           padding:10px;
+         }
+         th,tr:nth-child(odd){
+           background: #e6eeff;
+         }
+         th,tr:nth-child(even){
+           background: #e6f2ff;
+         }
+         #slider{
+           align-content: center;
+         }

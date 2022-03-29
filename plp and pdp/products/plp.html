@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<h2> PRODUCTS</h2>
+
+<div id="demo">
+</div>
+
+<script>
+  $(function(){
+var menproducts = [
+   { 
+     itemID: "1", 
+     itemName: "WINTER WEAR", 
+     itemDesc: "Highly comfy, super stretchable winter wear",
+     image: "winter.jpg",
+     },
+     { 
+     itemID: "2", 
+     itemName: "BAG", 
+     itemDesc: "GYM BAG",
+     image: "bag.jpg",
+     },
+      { 
+     itemID: "3", 
+     itemName: "FORMAL DRESS",
+     itemDesc: "GIVES PROFESSIONAL LOOK",
+     image: "img1.jpeg",
+     },
+     { 
+     itemID: "4", 
+     itemName:"SHIRT", 
+     itemDesc:"CASUAL SHIRT",
+     image: "img2.jpg",
+     },
+
+ ];
+ 
+let text = "";
+function randomSku(min, max) { 
+  
+      return Math.floor(Math.random() * (max - min) + min);
+  } 
+  
+  function randomPrice(min, max) { 
+  
+  return Math.floor(Math.random() * (max - min) + min);
+} 
+  
+
+for (let i = 0; i < menproducts.length; i++) {
+ let sku_random=randomSku(1000, 2000);
+ let price_random=randomPrice(20,60);
+ let redirect= "pdp.html?name="+menproducts[i].itemName+"&sku="+sku_random +"&price="+price_random+"&img="+menproducts[i].image;
+text += "<h2><a href='"+redirect+"'><p id='product_name'  value="+menproducts[i].itemName + "> "+menproducts[i].itemName +" </a></p></h2>";
+text += "<h2 id='pdp_img'><a href='"+redirect+"'> <img  src='../images/"+menproducts[i].image+"' width=300px height=300px /></a></h2>";
+text += "<h2><p id='product_sku' value="+sku_random+">sku id:"+sku_random+"</p></h2>" ;
+text += "<h2><p id='product_desc' value="+menproducts[i].itemDesc + ">"+menproducts[i].itemDesc +"</p></h2>";
+text += "<h2><p id='product_price' value="+price_random+ ">$"+price_random+"</p></h2><br><br>";
+
+
+
+
+}
+document.getElementById("demo").innerHTML = text;
+});
+</script>
+</body>
+</html>
